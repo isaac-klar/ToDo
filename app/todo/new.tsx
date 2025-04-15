@@ -41,7 +41,7 @@ export default function NewTodoScreen() {
     if (error) {
       Alert.alert("Error", error.message);
     } else {
-      router.replace("/"); // go back to home screen
+      router.back(); // go back to home screen
     }
   };
 

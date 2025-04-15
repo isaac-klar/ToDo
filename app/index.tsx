@@ -42,29 +42,31 @@ export default function Index() {
     checkAuth();
   }, []);
 
-  useEffect(() => {
-    const fetchTodos = async () => {
-      const { data, error } = await supabase.auth.getUser();
-      const user = data?.user;
+  useFocusEffect(
+    useCallback(() => {
+      const fetchTodos = async () => {
+        const { data, error } = await supabase.auth.getUser();
+        const user = data?.user;
 
-      if (error || !user) {
-        setError("User not authenticated.");
-        return;
-      }
+        if (error || !user) {
+          setError("User not authenticated.");
+          return;
+        }
 
-      const { data: todosData, error: todosError } = await supabase
-        .from("todos")
-        .select("*")
-        .eq("user_id", user.id);
+        const { data: todosData, error: todosError } = await supabase
+          .from("todos")
+          .select("*")
+          .eq("user_id", user.id);
 
-      if (todosError) {
-        setError(todosError.message);
-      } else {
-        setTodos(todosData);
-      }
-    };
-    fetchTodos();
-  }, []);
+        if (todosError) {
+          setError(todosError.message);
+        } else {
+          setTodos(todosData);
+        }
+      };
+      fetchTodos();
+    }, [])
+  );
 
   if (loading) {
     return (
