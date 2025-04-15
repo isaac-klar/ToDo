@@ -1,3 +1,30 @@
+# 📝 Todo App (built with Expo + Supabase)
+
+This is a simple mobile todo list app built using **React Native**, **Expo Router**, and **Supabase**. It supports:
+
+- ✅ User authentication (login & signup)
+- ✅ Viewing a personal list of todos
+- ✅ Adding new todos
+- ✅ Tapping a todo to view details
+- ✅ Marking todos complete/incomplete
+- ✅ Deleting todos
+- ✅ Automatic refresh when returning to the home screen
+
+Each user has their own todo list, and data is stored securely in Supabase with Row-Level Security (RLS) enabled.
+
+---
+
+## 📱 Tech Stack
+
+- **Expo** (React Native framework)
+- **Expo Router** for navigation
+- **Supabase** for authentication and database
+- **TypeScript** for static typing
+
+
+
+
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
