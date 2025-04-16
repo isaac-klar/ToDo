@@ -49,7 +49,7 @@ export default function NewTodoScreen() {
     <View style={styles.container}>
       <Text style={styles.heading}>New Todo</Text>
       <TextInput
-        placeholder="Enter todo title"
+        placeholder="What do you have to do?"
         value={title}
         onChangeText={setTitle}
         style={styles.input}
